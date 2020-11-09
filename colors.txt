@@ -1,0 +1,3 @@
+2. background ffd9b0
+
+1 background gradient 77e6f0 #fff, Reg Color ff14ff, form font color 364b60, font-size 12, text field 45px 

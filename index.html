@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>contact details</title>
+  <link rel="stylesheet" href="css/contact.css">
+  <script>
+    function registerBadge() {
+      var SuccessMsg = "Hi! You Have Registered Successfully"
+      alert(SuccessMsg);
+    }
+    function validate(){
+      var pwdWrng = document.getElementById('pwdWrong');
+      var pwdSuccess = document.getElementById('pwdSuccess');
+      var field = document.getElementById('pwdField');
+      var crossIcon = document.getElementById('pwdWrong');
+      var regex = /^[A-Za-z0-9 ]+$/
+      var isValid = regex.test(field.value);
+      if(field.value.length<5){
+        crossIcon.style.display='block';
+      }else{      
+        if(isValid && field.value.length>5 && field.value.length<10){
+          pwdSuccess.style.display='block';
+          crossIcon.style.display='none';
+        }
+      }
+    }
+    function confirmPwd(){
+      var pwdSuccess = document.getElementById('cnfPwdSuccess');
+      var pwdWarn = document.getElementById('cnfPwdwarning');
+      var confrmfield = document.getElementById('CnfrmpwdField');
+      var field = document.getElementById('pwdField');
+      if(confrmfield.value === field.value){
+        pwdSuccess.style.display='block';
+        pwdWarn.style.display='none';
+      }else{
+        pwdSuccess.style.display='none';
+        pwdWarn.style.display='block';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="main_container">
+    <form id="myForm" action="#" onsubmit="registerBadge()">
+      <div class="leftdiv">
+        <img src="./img/task3.png" style="width:100%; height:100%;"/>
+      </div>
+
+
+
+
+<div class="rightdiv">
+<h1 style="padding-bottom:30px;">Booking Place for your dinner</h1>
+<input type="text" placeholder="Your Name"/>
+<input type="number" placeholder="Your Phone Number"/>
+<select>
+  <option value="" disabled selected>Time</option>
+  <option value="1:00">1:00</option>
+</select>
+<select>
+  <option value="" disabled selected>Food</option>
+  <option value="Biryani">Chicken Biryani</option>
+  <option value="Thandhoori Chicken">Thandhoori Chicken</option>
+  <option value="Mutton">Mutton Biryani</option>
+</select>
+<h3>Select Your Dining Space</h3>
+<div class="selectPersons">
+  <span>&nbsp;2&nbsp;</span>
+  <div class="selected_number"><span>&nbsp;4&nbsp;</span> <h3 class="Person">Person</h3></div>
+  <span>&nbsp;6&nbsp;</span>
+  <span>&nbsp;8&nbsp;</span>
+  <span>10</span>
+</div>
+<button type="submit" class="book_now">Book Now</button>
+
+<p class="verify">Varify your booking info from your Phone</p>
+</div>
+
+</form>
+</div>
+</body>
+
+</html>
